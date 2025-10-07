@@ -1,105 +1,167 @@
 :root {
-      --bg-dark: #121212;
-      --mist: #ECE8E1; 
-      --accent: #B87E3E; 
-      --muted: #C1B7A3; 
-      --glass: rgba(255, 255, 255, 0.03);
-      --max-width: 800px;
-    }
+  --bg-dark: #121212;
+  --mist: #ECE8E1; 
+  --accent: #B87E3E; 
+  --muted: #C1B7A3; 
+  --glass: rgba(255, 255, 255, 0.03);
+  --max-width: 800px;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html, body {
-      font-family: 'Raleway', sans-serif;
-      background: var(--bg-dark);
-      color: var(--mist);
-      min-height: 100vh;
-    }
+html, body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--bg-dark);
+  color: var(--mist);
+  min-height: 100vh;
+}
 
-    nav {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 40;
-      background-color: var(--muted);
-      padding: 8px 14px;
-      border-radius: 30px;
-      display: flex;
-      gap: 18px;
-    }
+nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  background-color: var(--muted);
+  padding: 8px 14px;
+  border-radius: 30px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
 
-    nav a {
-      color: var(--bg-dark);
-      text-decoration: none;
-      font-weight: 300;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: all 0.25s;
-    }
+nav a {
+  color: var(--bg-dark);
+  text-decoration: none;
+  font-weight: 300;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.25s;
+}
 
-    nav a:hover {
-      background-color: var(--bg-dark);
-      color: var(--mist);
-      box-shadow: 0 6px 18px rgba(119,184,209,0.06);
-    }
+nav a:hover {
+  background-color: var(--bg-dark);
+  color: var(--mist);
+  box-shadow: 0 6px 18px rgba(119,184,209,0.06);
+}
 
-    main {
-      max-width: var(--max-width);
-      margin: 120px auto 40px;
-      padding: 20px;
-    }
+main {
+  max-width: var(--max-width);
+  margin: 120px auto 40px;
+  padding: 20px;
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: var(--accent);
-      margin-bottom: 10px;
-      text-align: center;
-    }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  text-align: center;
+}
 
-    p.lead {
-      text-align: center;
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 40px;
-    }
+p.lead {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
 
-    .contact-info {
-      background: rgba(255,255,255,0.02);
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
+.contact-info {
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
 
-    .contact-info strong {
-      color: var(--accent);
-    }
+.contact-info strong {
+  color: var(--accent);
+}
 
-    .social-links {
-      margin-top: 20px;
-    }
+.social-links {
+  margin-top: 20px;
+}
 
-    .social-links a {
-      margin-right: 16px;
-      text-decoration: none;
-      color: var(--mist);
-      transition: color 0.3s;
-    }
+.social-links a {
+  margin-right: 16px;
+  text-decoration: none;
+  color: var(--mist);
+  transition: color 0.3s;
+}
 
-    .social-links a:hover {
-      color: var(--accent);
-    }
+.social-links a:hover {
+  color: var(--accent);
+}
 
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ---------------------------- */
+/* 📱 RESPONSIVE DESIGN SECTION */
+/* ---------------------------- */
+
+/* Medium screens (tablets and small laptops) */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  main {
+    margin-top: 100px;
+    padding: 16px;
+  }
+
+  nav {
+    gap: 10px;
+    padding: 6px 10px;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  nav {
+    top: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p.lead {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .contact-info {
+    font-size: 0.95rem;
+    padding: 20px;
+  }
+
+  .social-links a {
+    display: inline-block;
+    margin: 6px 8px 0 0;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 18px;
+  }
+}

@@ -13,7 +13,7 @@ body, html {
 
 #bg-video {
   object-fit: cover;
-  object-position: 50% 40%; /* Adjust percentages to move focus */
+  object-position: 50% 40%; /* Adjust focus area of video */
   position: fixed;
   right: 0;
   bottom: 0;
@@ -90,4 +90,84 @@ body, html {
 
 .cta-btn:hover a {
   color: #121212; /* Dark text on hover */
+}
+
+/* ------------------------------------- */
+/* 📱 RESPONSIVENESS STARTS HERE */
+/* ------------------------------------- */
+
+/* Medium screens (tablets, landscape phones) */
+@media (max-width: 1024px) {
+  .headline h1 {
+    font-size: 3rem;
+  }
+
+  .headline p {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    padding: 10px 25px;
+  }
+}
+
+/* Small screens (phones in portrait) */
+@media (max-width: 600px) {
+  body, html {
+    overflow: auto; /* Allow scroll on very small screens */
+  }
+
+  #bg-video {
+    object-position: 50% 50%;
+  }
+
+  .headline {
+    width: 90%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
+
+  .headline p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .headline h1 {
+    font-size: 2rem;
+    margin: 8px 0;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-btn {
+    padding: 10px 22px;
+    border-radius: 25px;
+  }
+
+  .cta-btn a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small screens (e.g., older phones, <380px wide) */
+@media (max-width: 380px) {
+  .headline h1 {
+    font-size: 1.6rem;
+  }
+
+  .headline p,
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 8px 18px;
+  }
 }
