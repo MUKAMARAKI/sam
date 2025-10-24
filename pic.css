@@ -154,6 +154,55 @@ h2.section-title {
   text-align: center;
   background: rgba(0, 0, 0, 0.2);
 }
+/* video */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #fafafa;
+  height: 330px;
+}
+
+/* Each video card */
+.video-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Video styling */
+.video-item video {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+
+/* Optional hover effect for text */
+.video-item:hover .description {
+  color: #111;
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
 
 /* === FOOTER === */
 footer {
